@@ -9,145 +9,125 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a0a;color:#fff;line-height:1.6}
 .container{max-width:1400px;margin:0 auto;padding:0 20px}
-
 .header{background:#0f0f1a;border-bottom:1px solid rgba(255,255,255,0.05);position:sticky;top:0;z-index:1000}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
-.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff;font-size:1.4rem;font-weight:800}
-.logo span{color:#e50914}
+.logo{color:#fff;font-size:1.4rem;font-weight:800;text-decoration:none}.logo span{color:#e50914}
 .nav-menu{display:flex;gap:5px}
-.nav-link{color:#b3b3b3;text-decoration:none;padding:8px 14px;border-radius:8px;font-size:.85rem;font-weight:500;transition:.3s}
-.nav-link:hover,.nav-link.active{color:#fff;background:rgba(229,9,20,0.1)}
-.nav-link.active{color:#e50914}
+.nav-link{color:#b3b3b3;text-decoration:none;padding:8px 14px;border-radius:8px;font-size:.85rem;font-weight:500;transition:.3s;cursor:pointer}
+.nav-link:hover,.nav-link.active{color:#fff;background:rgba(229,9,20,0.1)}.nav-link.active{color:#e50914}
 .header-actions{display:flex;gap:8px}
-.search-toggle,.menu-toggle{background:none;border:none;color:#b3b3b3;font-size:1.2rem;cursor:pointer;padding:8px 12px;border-radius:8px}
-.menu-toggle{display:none}
-.search-bar{max-height:0;overflow:hidden;transition:.4s;background:#0f0f1a}
-.search-bar.active{max-height:80px}
-.search-bar-inner{display:flex;gap:10px;padding:12px 20px;align-items:center}
-.search-bar-inner input{flex:1;padding:12px 16px;border:2px solid rgba(255,255,255,0.1);border-radius:8px;background:#0a0a0a;color:#fff;font-size:1rem;outline:none}
-.search-bar-inner input:focus{border-color:#e50914}
-.search-bar-inner button{padding:12px 24px;background:#e50914;color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer}
-
-.loader-container{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:400px;gap:20px}
-.loader{width:45px;height:45px;border:3px solid #1a1a2e;border-top-color:#e50914;border-radius:50%;animation:s .8s linear infinite}
+.srch-btn,.menu-btn{background:none;border:none;color:#b3b3b3;font-size:1.2rem;cursor:pointer;padding:8px 12px}
+.menu-btn{display:none}
+.srch-bar{max-height:0;overflow:hidden;transition:.4s;background:#0f0f1a}
+.srch-bar.on{max-height:80px}
+.srch-inner{display:flex;gap:10px;padding:12px 20px;align-items:center}
+.srch-inner input{flex:1;padding:12px 16px;border:2px solid rgba(255,255,255,0.1);border-radius:8px;background:#0a0a0a;color:#fff;font-size:1rem;outline:none}
+.srch-inner input:focus{border-color:#e50914}
+.srch-inner button{padding:12px 24px;background:#e50914;color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer}
+.ldr-c{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:400px;gap:20px}
+.ldr{width:45px;height:45px;border:3px solid #1a1a2e;border-top-color:#e50914;border-radius:50%;animation:s .8s linear infinite}
 @keyframes s{to{transform:rotate(360deg)}}
-
-.hero-section{margin-bottom:40px}
-.hero-carousel{position:relative;border-radius:12px;overflow:hidden;height:450px}
-.hero-slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity .8s;display:flex;align-items:flex-end}
-.hero-slide.active{opacity:1}
-.hero-slide-bg{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;filter:brightness(0.4)}
-.hero-slide-content{position:relative;z-index:2;padding:50px;max-width:600px}
-.hero-slide-content h2{font-size:2.2rem;font-weight:800;margin-bottom:10px}
-.hero-meta{display:flex;gap:15px;margin-bottom:12px;font-size:.9rem;color:#b3b3b3}
-.hero-actions{display:flex;gap:12px}
-.btn-pri,.btn-sec{padding:12px 28px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:8px}
-.btn-pri{background:#e50914;color:#fff}
-.btn-sec{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2)}
-.hero-dots{position:absolute;bottom:20px;right:30px;display:flex;gap:8px;z-index:3}
+.hero{margin-bottom:40px}
+.hero-c{position:relative;border-radius:12px;overflow:hidden;height:450px}
+.hero-s{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity .8s;display:flex;align-items:flex-end}
+.hero-s.on{opacity:1}
+.hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;filter:brightness(0.4)}
+.hero-txt{position:relative;z-index:2;padding:50px;max-width:600px}
+.hero-txt h2{font-size:2.2rem;font-weight:800;margin-bottom:10px}
+.hero-m{display:flex;gap:15px;margin-bottom:12px;font-size:.9rem;color:#b3b3b3}
+.hero-a{display:flex;gap:12px}
+.btn,.btn2{padding:12px 28px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:8px}
+.btn{background:#e50914;color:#fff}
+.btn2{background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2)}
+.hero-d{position:absolute;bottom:20px;right:30px;display:flex;gap:8px;z-index:3}
 .hero-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;border:none;transition:.3s}
-.hero-dot.active{background:#e50914;width:30px;border-radius:5px}
+.hero-dot.on{background:#e50914;width:30px;border-radius:5px}
+.cat-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:15px;margin-bottom:40px}
+.cat-i{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:25px 10px;background:#1a1a2e;border-radius:12px;text-decoration:none;color:#fff;transition:.3s;border:2px solid transparent;cursor:pointer}
+.cat-i:hover{border-color:var(--c,#e50914);transform:translateY(-5px)}
+.cat-i i{font-size:2rem;color:var(--c,#e50914);margin-bottom:10px}
+.cat-i span{font-weight:600;font-size:.85rem;text-align:center}
+.sec-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
+.sec-h h2{font-size:1.4rem;font-weight:700}
+.sec-h button{color:#e50914;background:none;border:none;cursor:pointer;font-size:.9rem;font-weight:500}
+.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px;margin-bottom:40px}
+.cd{background:#1a1a2e;border-radius:12px;overflow:hidden;cursor:pointer;transition:.3s}
+.cd:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(229,9,20,0.3);background:#252542}
+.cd img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block}
+.cd-i{padding:12px 14px 16px}
+.cd-i h3{font-size:.9rem;font-weight:600;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cd-m{display:flex;align-items:center;gap:8px;font-size:.75rem;color:#6c6c80}
+.imdb{color:#f5c518;font-weight:600}
+.b{background:#e50914;color:#fff;padding:2px 8px;border-radius:4px;font-size:.65rem;font-weight:600}
+.b.s{background:#4361ee}
+.pg{display:flex;justify-content:center;align-items:center;gap:15px;margin:30px 0}
+.pg button{padding:10px 24px;background:#1a1a2e;color:#fff;border:1px solid rgba(255,255,255,0.1);border-radius:8px;cursor:pointer}
+.pg button:disabled{opacity:.3;cursor:default}
 
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:15px;margin-bottom:40px}
-.cat-item{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:25px 10px;background:#1a1a2e;border-radius:12px;text-decoration:none;color:#fff;transition:.3s;border:2px solid transparent;cursor:pointer}
-.cat-item:hover{border-color:var(--c,#e50914);transform:translateY(-5px)}
-.cat-item i{font-size:2rem;color:var(--c,#e50914);margin-bottom:10px}
-.cat-item span{font-weight:600;font-size:.85rem;text-align:center}
+.dh{position:relative;min-height:400px;border-radius:12px;overflow:hidden;margin-bottom:30px}
+.db{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;filter:brightness(0.2)blur(3px)}
+.dbo{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to right,rgba(10,10,10,0.95),rgba(10,10,10,0.4))}
+.dc{position:relative;z-index:2;display:flex;gap:40px;padding:50px;align-items:flex-start}
+.dp{width:280px;min-width:280px;border-radius:12px;overflow:hidden}
+.dp img{width:100%;display:block}
+.di{flex:1}
+.di h1{font-size:2rem;font-weight:800;margin-bottom:10px}
+.dm{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;color:#b3b3b3;font-size:.85rem}
+.dm .ir{color:#f5c518;font-weight:700}
+.dg{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px}
+.dg span{padding:4px 12px;background:rgba(229,9,20,0.15);border:1px solid rgba(229,9,20,0.2);border-radius:20px;font-size:.75rem}
+.da{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.desc{color:#b3b3b3;line-height:1.7;margin-bottom:20px;font-size:.9rem}
+.cg{display:flex;gap:12px;overflow-x:auto;padding-bottom:10px}
+.ci{min-width:70px;text-align:center}
+.ci img{width:50px;height:50px;border-radius:50%;object-fit:cover;margin-bottom:5px;border:2px solid rgba(255,255,255,0.1)}
+.cn{font-size:.65rem}
+.cr{font-size:.55rem;color:#6c6c80}
+.se{margin-top:30px}
+.rt{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.rt button{padding:8px 20px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;background:#1a1a2e;color:#b3b3b3;cursor:pointer}
+.rt .on{background:#e50914;color:#fff}
+.el{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ec{background:#1a1a2e;border-radius:12px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.ec h4{font-size:.85rem;margin-bottom:3px}
+.ec p{font-size:.7rem;color:#6c6c80}
+.ea{display:flex;gap:8px}
+.ep{background:#e50914;color:#fff;padding:8px 14px;border-radius:6px;border:none;cursor:pointer;font-size:.8rem}
+.ed{background:rgba(255,255,255,0.1);color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:5px;font-size:.8rem}
+.si{margin-bottom:20px;padding:20px;background:#1a1a2e;border-radius:12px}
+.es{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;color:#6c6c80;gap:15px}
+.es i{font-size:3rem}
 
-.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
-.section-header h2{font-size:1.4rem;font-weight:700}
-.view-all{color:#e50914;background:none;border:none;cursor:pointer;font-size:.9rem;font-weight:500}
+.ply{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999}
+.ply.on{display:flex;flex-direction:column}
+.pt{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:#000;min-height:44px;flex-shrink:0}
+.pt span{color:#fff;font-size:.85rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.px{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:4px 10px}
+.ps{flex:1;position:relative;background:#000;min-height:0}
+.ps video{width:100%;height:100%;object-fit:contain;background:#000;outline:none;position:absolute;top:0;left:0}
+.pl{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,0.6);font-size:.8rem;z-index:5;pointer-events:none}
+.pb{padding:8px 16px;background:#000;text-align:center;flex-shrink:0}
+.bdl{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#e50914;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:.85rem}
 
-.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px;margin-bottom:40px}
-.movie-card{background:#1a1a2e;border-radius:12px;overflow:hidden;cursor:pointer;transition:.3s}
-.movie-card:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(229,9,20,0.3);background:#252542}
-.movie-card img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block}
-.movie-card-info{padding:12px 14px 16px}
-.movie-card-info h3{font-size:.9rem;font-weight:600;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.card-meta{display:flex;align-items:center;gap:8px;font-size:.75rem;color:#6c6c80}
-.card-meta .imdb{color:#f5c518;font-weight:600}
-.badge{background:#e50914;color:#fff;padding:2px 8px;border-radius:4px;font-size:.65rem;font-weight:600}
-.badge.s{background:#4361ee}
-
-.pagination{display:flex;justify-content:center;align-items:center;gap:15px;margin:30px 0}
-.pagination button{padding:10px 24px;background:#1a1a2e;color:#fff;border:1px solid rgba(255,255,255,0.1);border-radius:8px;cursor:pointer}
-.pagination button:disabled{opacity:.3;cursor:default}
-
-.detail-header{position:relative;min-height:400px;border-radius:12px;overflow:hidden;margin-bottom:30px}
-.detail-bg{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;filter:brightness(0.2)blur(3px)}
-.detail-bgo{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to right,rgba(10,10,10,0.95),rgba(10,10,10,0.4))}
-.detail-content{position:relative;z-index:2;display:flex;gap:40px;padding:50px;align-items:flex-start}
-.detail-poster{width:280px;min-width:280px;border-radius:12px;overflow:hidden}
-.detail-poster img{width:100%;display:block}
-.detail-info{flex:1}
-.detail-info h1{font-size:2rem;font-weight:800;margin-bottom:10px}
-.detail-meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;color:#b3b3b3;font-size:.85rem}
-.detail-meta .imdb-rating{color:#f5c518;font-weight:700}
-.detail-genre{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px}
-.detail-genre span{padding:4px 12px;background:rgba(229,9,20,0.15);border:1px solid rgba(229,9,20,0.2);border-radius:20px;font-size:.75rem}
-.detail-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
-.detail-desc{color:#b3b3b3;line-height:1.7;margin-bottom:20px;font-size:.9rem}
-.cast-grid{display:flex;gap:12px;overflow-x:auto;padding-bottom:10px}
-.cast-item{min-width:70px;text-align:center}
-.cast-item img{width:50px;height:50px;border-radius:50%;object-fit:cover;margin-bottom:5px;border:2px solid rgba(255,255,255,0.1)}
-.cast-name{font-size:.65rem}
-.cast-role{font-size:.55rem;color:#6c6c80}
-
-.section-episodes{margin-top:30px}
-.res-tabs{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
-.res-tab{padding:8px 20px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;background:#1a1a2e;color:#b3b3b3;cursor:pointer}
-.res-tab.active{background:#e50914;color:#fff}
-.ep-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.ep-card{background:#1a1a2e;border-radius:12px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
-.ep-card h4{font-size:.85rem;margin-bottom:3px}
-.ep-card p{font-size:.7rem;color:#6c6c80}
-.ep-actions{display:flex;gap:8px}
-.ep-play{background:#e50914;color:#fff;padding:8px 14px;border-radius:6px;border:none;cursor:pointer;font-size:.8rem}
-.ep-dl{background:rgba(255,255,255,0.1);color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:5px;font-size:.8rem}
-
-.search-info{margin-bottom:20px;padding:20px;background:#1a1a2e;border-radius:12px}
-.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px;color:#6c6c80;gap:15px}
-.empty-state i{font-size:3rem}
-
-/* PLAYER FULLSCREEN */
-.player-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999}
-.player-overlay.active{display:flex;flex-direction:column}
-.player-top{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:#000;min-height:44px;flex-shrink:0}
-.player-title{color:#fff;font-size:.85rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
-.player-top-r{display:flex;align-items:center;gap:8px}
-.sub-btn{background:none;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.7);font-size:1rem;cursor:pointer;padding:4px 10px;border-radius:4px;display:flex;align-items:center;gap:4px}
-.sub-btn.active{background:#e50914;border-color:#e50914;color:#fff}
-.pclose{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:4px 10px}
-.player-stage{flex:1;position:relative;background:#000;min-height:0}
-.player-stage video{width:100%;height:100%;object-fit:contain;background:#000;outline:none;position:absolute;top:0;left:0}
-.player-loading{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,0.6);font-size:.8rem;z-index:5;pointer-events:none}
-.player-bottom{padding:8px 16px;background:#000;text-align:center;flex-shrink:0}
-.btn-dl{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:#e50914;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;font-size:.85rem}
-
-.footer{background:#0f0f1a;border-top:1px solid rgba(255,255,255,0.05);padding:40px 0 0;margin-top:50px}
-.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
-.footer-col h4{font-size:.95rem;margin-bottom:12px}
-.footer-col a,.footer-col p{color:#6c6c80;font-size:.8rem;text-decoration:none;display:block;margin-bottom:8px}
-.footer-col a:hover{color:#e50914}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding:20px 0;margin-top:30px;text-align:center;color:#6c6c80;font-size:.8rem}
-
-@media(max-width:1024px){
-.detail-content{flex-direction:column;align-items:center;padding:30px}
-.detail-poster{width:200px;min-width:200px}
-.footer-grid{grid-template-columns:repeat(2,1fr)}
-}
+.ft{background:#0f0f1a;border-top:1px solid rgba(255,255,255,0.05);padding:40px 0 0;margin-top:50px}
+.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.fc h4{font-size:.95rem;margin-bottom:12px}
+.fc a,.fc p{color:#6c6c80;font-size:.8rem;text-decoration:none;display:block;margin-bottom:8px;cursor:pointer}
+.fc a:hover{color:#e50914}
+.fb{border-top:1px solid rgba(255,255,255,0.05);padding:20px 0;margin-top:30px;text-align:center;color:#6c6c80;font-size:.8rem}
+@media(max-width:1024px){.dc{flex-direction:column;align-items:center;padding:30px}.dp{width:200px;min-width:200px}.fg{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){
 .nav-menu{display:none;position:absolute;top:70px;left:0;width:100%;background:#0f0f1a;flex-direction:column;padding:10px 20px}
-.nav-menu.active{display:flex}
-.menu-toggle{display:block}
-.hero-carousel{height:300px}
-.hero-slide-content{padding:30px}
-.hero-slide-content h2{font-size:1.3rem}
-.movie-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-.detail-content{padding:20px}
-.footer-grid{grid-template-columns:1fr;gap:25px}
-.search-bar-inner{flex-direction:column}
-.search-bar-inner input,.search-bar-inner button{width:100%}
+.nav-menu.on{display:flex}
+.menu-btn{display:block}
+.hero-c{height:300px}
+.hero-txt{padding:30px}
+.hero-txt h2{font-size:1.3rem}
+.gr{grid-template-columns:repeat(2,1fr);gap:10px}
+.dc{padding:20px}
+.fg{grid-template-columns:1fr;gap:25px}
+.srch-inner{flex-direction:column}
+.srch-inner input,.srch-inner button{width:100%}
 }
 </style>
 </head>
@@ -155,25 +135,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 <header class="header">
 <div class="container header-inner">
-<a href="#" class="logo" onclick="go(\'home\')">Movie <span>Free</span> by R</a>
+<a class="logo" onclick="nav('home')">Movie <span>Free</span> by R</a>
 <nav class="nav-menu" id="nm">
-<a class="nav-link active" onclick="go(\'home\')" data-p="home">Beranda</a>
-<a class="nav-link" onclick="go(\'global\')" data-p="global">Global</a>
-<a class="nav-link" onclick="go(\'indo\')" data-p="indonesia">Indonesia</a>
-<a class="nav-link" onclick="go(\'hollywood\')" data-p="hollywood">Hollywood</a>
-<a class="nav-link" onclick="go(\'asia\')" data-p="asia">Asia</a>
-<a class="nav-link" onclick="go(\'horror\')" data-p="horror">Horror</a>
-<a class="nav-link" onclick="go(\'anim\')" data-p="animasi">Animasi</a>
-<a class="nav-link" onclick="go(\'series\')" data-p="series">Series</a>
+<a class="nav-link on" onclick="nav('home')" data-p="home">Beranda</a>
+<a class="nav-link" onclick="nav('global')" data-p="global">Global</a>
+<a class="nav-link" onclick="nav('indo')" data-p="indonesia">Indonesia</a>
+<a class="nav-link" onclick="nav('hollywood')" data-p="hollywood">Hollywood</a>
+<a class="nav-link" onclick="nav('asia')" data-p="asia">Asia</a>
+<a class="nav-link" onclick="nav('horror')" data-p="horror">Horror</a>
+<a class="nav-link" onclick="nav('anim')" data-p="animasi">Animasi</a>
+<a class="nav-link" onclick="nav('series')" data-p="series">Series</a>
 </nav>
 <div class="header-actions">
-<button class="search-toggle" onclick="ts()"><i class="fas fa-search"></i></button>
-<button class="menu-toggle" onclick="tm()"><i class="fas fa-bars"></i></button>
+<button class="srch-btn" onclick="ts()"><i class="fas fa-search"></i></button>
+<button class="menu-btn" onclick="tm()"><i class="fas fa-bars"></i></button>
 </div>
 </div>
-<div class="search-bar" id="sb">
-<div class="container search-bar-inner">
-<input type="text" id="si" placeholder="Cari film..." onkeypress="if(event.key===\'Enter\')sc()">
+<div class="srch-bar" id="sb">
+<div class="container srch-inner">
+<input type="text" id="si" placeholder="Cari film..." onkeypress="if(event.key==='Enter')sc()">
 <button onclick="sc()"><i class="fas fa-search"></i> Cari</button>
 <button style="background:none;color:#b3b3b3;padding:8px" onclick="ts()"><i class="fas fa-times"></i></button>
 </div>
@@ -181,124 +161,83 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 </header>
 
 <main>
-<div class="loader-container" id="ldr"><div class="loader"></div><p>Memuat data...</p></div>
+<div class="ldr-c" id="ldr"><div class="ldr"></div><p>Memuat data...</p></div>
 <div id="pc"></div>
 </main>
 
-<footer class="footer">
+<footer class="ft">
 <div class="container">
-<div class="footer-grid">
-<div class="footer-col"><h4>Movie Free by R</h4><p>Nonton movie & series gratis.</p></div>
-<div class="footer-col">
-<h4>Kategori</h4>
-<a onclick="go(\'global\')">Global</a><a onclick="go(\'indo\')">Indonesia</a>
-<a onclick="go(\'hollywood\')">Hollywood</a><a onclick="go(\'asia\')">Asia</a>
-<a onclick="go(\'horror\')">Horror</a><a onclick="go(\'anim\')">Animasi</a>
+<div class="fg">
+<div class="fc"><h4>Movie Free by R</h4><p>Nonton movie & series gratis.</p></div>
+<div class="fc"><h4>Kategori</h4><a onclick="nav('global')">Global</a><a onclick="nav('indo')">Indonesia</a><a onclick="nav('hollywood')">Hollywood</a><a onclick="nav('asia')">Asia</a><a onclick="nav('horror')">Horror</a><a onclick="nav('anim')">Animasi</a></div>
+<div class="fc"><h4>Series</h4><a onclick="nav('ser-kdrama')">K-Drama</a><a onclick="nav('ser-indo')">Indo Drama</a><a onclick="nav('ser-anime')">Anime</a><a onclick="nav('ser-barat')">Barat</a></div>
+<div class="fc"><h4>Tentang</h4><p>Data dari MovieBox API.</p></div>
 </div>
-<div class="footer-col">
-<h4>Series</h4>
-<a onclick="go(\'ser-kdrama\')">K-Drama</a>
-<a onclick="go(\'ser-indo\')">Indo Drama</a>
-<a onclick="go(\'ser-anime\')">Anime</a>
-<a onclick="go(\'ser-barat\')">Barat</a>
-</div>
-<div class="footer-col"><h4>Tentang</h4><p>Data dari MovieBox API via Sonzai X.</p></div>
-</div>
-<div class="footer-bottom">&copy; 2026 Movie Free by R</div>
+<div class="fb">&copy; 2026 Movie Free by R</div>
 </div>
 </footer>
 
-<div class="player-overlay" id="vm" onclick="cm(event)">
-<div class="player-top">
-<span class="player-title" id="mt">Player</span>
-<div class="player-top-r">
-<button class="sub-btn" id="subBtn" onclick="togSub()" style="display:none"><i class="fas fa-closed-captioning"></i></button>
-<button class="pclose" onclick="cm()">&times;</button>
-</div>
-</div>
-<div class="player-stage">
+<div class="ply" id="vm" onclick="cm(event)">
+<div class="pt"><span id="mt">Player</span><button class="px" onclick="cm()">&times;</button></div>
+<div class="ps">
 <video id="vp" controls playsinline></video>
-<div class="player-loading" id="pl"><div class="loader"></div><span>Memuat video...</span></div>
+<div class="pl" id="pl"><div class="ldr"></div><span>Memuat video...</span></div>
 </div>
-<div class="player-bottom">
-<a id="dlBtn" href="#" target="_blank" class="btn-dl"><i class="fas fa-download"></i> Download Video</a>
-</div>
+<div class="pb"><a id="dlBtn" href="#" target="_blank" class="bdl"><i class="fas fa-download"></i> Download Video</a></div>
 </div>
 
 <script>
-var API = 'https://api.sonzaix.indevs.in';
-var PP = 20;
-var PH = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%231a1a2e%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%22150%22 y=%22225%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22 font-family=%22sans-serif%22%3ENo Image%3C/text%3E%3C/svg%3E';
-var curPage = 'home', curP = {page:1}, heroInt = null, curSlide = 0;
+var A='https://api.sonzaix.indevs.in',P=20;
+var PH='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 450%22%3E%3Crect fill=%22%231a1a2e%22 width=%22300%22 height=%22450%22/%3E%3Ctext x=%22150%22 y=%22225%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22 font-family=%22sans-serif%22%3ENo Image%3C/text%3E%3C/svg%3E';
+var cp='home',pp={page:1},hi=null,cs=0;
 
-function $(id){return document.getElementById(id)}
+function $(i){return document.getElementById(i)}
 function q(s){return document.querySelector(s)}
 function qa(s){return document.querySelectorAll(s)}
-function esc(s){if(!s)return '';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function e(s){if(!s)return '';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 function fd(d){if(!d)return '';try{return new Date(d).toLocaleDateString('id-ID',{year:'numeric',month:'long',day:'numeric'})}catch(e){return d}}
 function fs(b){if(!b)return '';var m=parseInt(b)/(1024*1024);return m>1024?(m/1024).toFixed(1)+' GB':m.toFixed(0)+' MB'}
-function shL(){var l=$('ldr');if(l)l.style.display='flex';var p=$('pc');if(p)p.innerHTML=''}
-function hdL(){var l=$('ldr');if(l)l.style.display='none'}
-function toast(m){var e=document.createElement('div');e.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#e50914;color:#fff;padding:10px 20px;border-radius:8px;z-index:9999;font-weight:600';e.textContent=m;document.body.appendChild(e);setTimeout(function(){e.style.opacity='0';e.style.transition='opacity .3s';setTimeout(function(){e.remove()},400)},3000)}
+function sl(){var l=$('ldr');if(l)l.style.display='flex';var p=$('pc');if(p)p.innerHTML=''}
+function hl(){var l=$('ldr');if(l)l.style.display='none'}
+function tm(m){var e=document.createElement('div');e.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#e50914;color:#fff;padding:10px 20px;border-radius:8px;z-index:9999;font-weight:600';e.textContent=m;document.body.appendChild(e);setTimeout(function(){e.style.opacity='0';e.style.transition='opacity .3s';setTimeout(function(){e.remove()},400)},3000)}
+async function api(u){try{var r=await fetch(u);if(!r.ok)return null;return await r.json()}catch(e){return null}}
+function iu(o){if(!o)return PH;if(typeof o==='string')return o||PH;if(o&&o.url)return o.url;return PH}
 
-async function api(url){try{var r=await fetch(url);if(!r.ok)return null;return await r.json()}catch(e){return null}}
-function iurl(o){if(!o)return PH;if(typeof o==='string')return o||PH;if(o&&o.url)return o.url;return PH}
+function nav(page,par){par=par||{};if(hi){clearInterval(hi);hi=null}cp=page;pp=Object.assign({},pp,par,{page:par.page||1});qa('.nav-link').forEach(function(l){l.classList.remove('on')});var map={home:'home',global:'global',indo:'indonesia',hollywood:'hollywood',asia:'asia',horror:'horror',anim:'animasi',series:'series','ser-kdrama':'series','ser-indo':'series','ser-anime':'series','ser-barat':'series'};var el=q('.nav-link[data-p="'+(map[page]||'home')+'"]');if(el)el.classList.add('on');if($('nm'))$('nm').classList.remove('on');sl();window.scrollTo({top:0});var h={home:function(){lh()},global:function(){ll('global')},indo:function(){ll('indonesia')},hollywood:function(){ll('hollywood')},asia:function(){ll('asia')},horror:function(){ll('horror')},anim:function(){ll('animasi')},detail:function(){ld(par.sid)},search:function(){sc(par.q)},series:function(){ls('kdrama')},'ser-kdrama':function(){ls('kdrama')},'ser-indo':function(){ls('indo')},'ser-anime':function(){ls('anime')},'ser-barat':function(){ls('barat')}};(h[page]||lh)()}
+function cpg(np){pp.page=np;nav(cp,{page:np})}
+function cc(sid){nav('detail',{sid:sid})}
+function rc(s){if(!s||!s.subjectId)return '';var img=iu(s.cover),t=e(s.title||''),im=s.imdbRatingValue||s.imdbRate||'',yr=s.releaseDate?String(s.releaseDate).substring(0,4):'',is=s.subjectType===2,id=s.subjectId;return '<div class="cd" onclick="cc(\''+id+'\')"><img src="'+img+'" alt="'+t+'" loading="lazy" onerror="this.src=\''+PH+'\'"><div class="cd-i"><h3 title="'+t+'">'+t+'</h3><div class="cd-m">'+(im?'<span class="imdb"><i class="fas fa-star"></i> '+im+'</span>':'')+(yr?'<span>'+yr+'</span>':'')+'<span class="b'+(is?' s':'')+'">'+(is?'Series':'Movie')+'</span></div></div></div>'}
+function rg(s){if(!s||s.length===0)return '<div class="es"><i class="fas fa-film"></i><p>Tidak ada data.</p></div>';return '<div class="gr">'+s.map(rc).join('')+'</div>'}
+function rs(ic,t,s,p){if(!s||s.length===0)return '';return '<section class="container" style="margin-bottom:40px"><div class="sec-h"><h2>'+ic+' '+t+'</h2><button onclick="nav(\''+p+'\')">Lihat Semua <i class="fas fa-arrow-right"></i></button></div>'+rg(s)+'</section>'}
+function rp(){var p=pp.page;return '<div class="pg"><button '+(p<=1?'disabled':'')+' onclick="cpg('+(p-1)+')"><i class="fas fa-chevron-left"></i> Sebelumnya</button><span>Halaman '+p+'</span><button onclick="cpg('+(p+1)+')">Selanjutnya <i class="fas fa-chevron-right"></i></button></div>'}
 
-function go(page,par){par=par||{};if(heroInt){clearInterval(heroInt);heroInt=null}curPage=page;curP=Object.assign({},curP,par,{page:par.page||1});qa('.nav-link').forEach(function(l){l.classList.remove('active')});var map={home:'home',global:'global',indo:'indonesia',hollywood:'hollywood',asia:'asia',horror:'horror',anim:'animasi',series:'series','ser-kdrama':'series','ser-indo':'series','ser-anime':'series','ser-barat':'series'};var el=q('.nav-link[data-p="'+(map[page]||'home')+'"]');if(el)el.classList.add('active');if($('nm'))$('nm').classList.remove('active');shL();window.scrollTo({top:0});var h={home:function(){lHome()},global:function(){lList('global')},indo:function(){lList('indonesia')},hollywood:function(){lList('hollywood')},asia:function(){lList('asia')},horror:function(){lList('horror')},anim:function(){lList('animasi')},detail:function(){lDet(par.sid)},search:function(){sc(par.q)},series:function(){lSer('kdrama')},'ser-kdrama':function(){lSer('kdrama')},'ser-indo':function(){lSer('indo')},'ser-anime':function(){lSer('anime')},'ser-barat':function(){lSer('barat')}};(h[page]||lHome)()}
-function cp(np){curP.page=np;go(curPage,{page:np})}
+function lh(){Promise.all([api(A+'/moviebox/homepage'),api(A+'/moviebox/global?page=1&perPage='+P),api(A+'/moviebox/indonesia?page=1&perPage=10'),api(A+'/moviebox/hollywood?page=1&perPage=10'),api(A+'/moviebox/series/kdrama?page=1&perPage=10')]).then(function(r){var home=r[0],global=r[1],indo=r[2],hol=r[3],kd=r[4];hl();var html='';
+if(home&&home.data&&home.data.items){var b=[];home.data.items.forEach(function(item){if(item.banner&&item.banner.banners)item.banner.banners.forEach(function(x){if(x.subject)b.push(x)})});if(b.length>0){html+='<section class="hero"><div class="hero-c">';b.slice(0,6).forEach(function(x,i){var sub=x.subject,g=sub.genre?sub.genre.split(',').map(function(x){return x.trim()}).slice(0,3):[],bg=iu(sub.cover),im=sub.imdbRatingValue||sub.imdbRate||'',id=sub.subjectId;html+='<div class="hero-s'+(i===0?' on':'')+'"><div class="hero-bg" style="background-image:url(\''+bg+'\')"></div><div class="hero-txt"><h2>'+e(sub.title)+'</h2><div class="hero-m">'+(sub.releaseDate?'<span><i class="fas fa-calendar"></i> '+sub.releaseDate+'</span>':'')+(im?'<span><i class="fas fa-star" style="color:var(--accent)"></i> '+im+'</span>':'')+'</div><div class="hero-a"><button class="btn" onclick="nav(\'detail\',{sid:\''+id+'\'})"><i class="fas fa-info-circle"></i> Detail</button><button class="btn2" onclick="pm(\''+id+'\')"><i class="fas fa-play"></i> Tonton</button></div></div></div>'});html+='<div class="hero-d">';b.slice(0,6).forEach(function(_,i){html+='<button class="hero-dot'+(i===0?' on':'')+'" onclick="goh('+i+')"></button>'});html+='</div></div></section>'}}
+html+='<section class="container"><div class="cat-g">';var cats=[{n:'Global',i:'fa-globe',p:'global',c:'#4361ee'},{n:'Indonesia',i:'fa-flag',p:'indo',c:'#e50914'},{n:'Hollywood',i:'fa-film',p:'hollywood',c:'#f5c518'},{n:'Asia',i:'fa-earth-asia',p:'asia',c:'#06d6a0'},{n:'Horror',i:'fa-ghost',p:'horror',c:'#7209b7'},{n:'Animasi',i:'fa-dragon',p:'anim',c:'#fb5607'},{n:'K-Drama',i:'fa-tv',p:'ser-kdrama',c:'#e63946'},{n:'Anime',i:'fa-crown',p:'ser-anime',c:'#f72585'},{n:'C-Drama',i:'fa-bolt',p:'ser-cdrama',c:'#4cc9f0'},{n:'Barat',i:'fa-globe-americas',p:'ser-barat',c:'#2ec4b6'}];cats.forEach(function(c){html+='<a onclick="nav(\''+c.p+'\')" class="cat-i" style="--c:'+c.c+'"><i class="fas '+c.i+'"></i><span>'+c.n+'</span></a>'});html+='</div></section>'
+var secs=[{ic:'🌍',t:'Global',d:global,p:'global'},{ic:'🇮🇩',t:'Indonesia',d:indo,p:'indo'},{ic:'🇺🇸',t:'Hollywood',d:hol,p:'hollywood'},{ic:'📺',t:'K-Drama',d:kd,p:'ser-kdrama'}];secs.forEach(function(s){var subs=s.d&&s.d.data&&s.d.data.subjects?s.d.data.subjects.slice(0,10):null;if(subs)html+=rs(s.ic,s.t,subs,s.p)})
+$('pc').innerHTML=html||'<div class="container es"><i class="fas fa-frown"></i><p>Tidak ada data.</p></div>';goh(0);startHero()})}
+function goh(i){cs=i;qa('.hero-s').forEach(function(s,idx){s.classList.toggle('on',idx===i)});qa('.hero-dot').forEach(function(d,idx){d.classList.toggle('on',idx===i)})}
+function startHero(){var s=qa('.hero-s');if(s.length<2)return;if(hi)clearInterval(hi);hi=setInterval(function(){goh((cs+1)%s.length)},5000)}
+function ll(type){api(A+'/moviebox/'+type+'?page='+pp.page+'&perPage='+P).then(function(d){hl();var t={global:'Global',indonesia:'Indonesia',hollywood:'Hollywood',asia:'Asia',horror:'Horror',animasi:'Animasi'};var s=d&&d.data&&d.data.subjects?d.data.subjects:[];$('pc').innerHTML='<div class="container" style="padding-top:30px"><div class="sec-h"><h2>'+(t[type]||type)+'</h2></div>'+(s.length>0?rg(s)+rp():'<div class="es"><i class="fas fa-film"></i><p>Tidak ada data.</p></div>')+'</div>'})}
+function ls(type){api(A+'/moviebox/series/'+type+'?page='+pp.page+'&perPage='+P).then(function(d){hl();var t={kdrama:'K-Drama',indo:'Indo Drama',anime:'Anime',barat:'Series Barat'};var s=d&&d.data&&d.data.subjects?d.data.subjects:[];$('pc').innerHTML='<div class="container" style="padding-top:30px"><div class="sec-h"><h2>'+(t[type]||'Series')+'</h2></div>'+(s.length>0?rg(s)+rp():'<div class="es"><i class="fas fa-tv"></i><p>Tidak ada data.</p></div>')+'</div>'})}
 
-function cc(sid){go('detail',{sid:sid})}
-function rc(s){if(!s||!s.subjectId)return '';var img=iurl(s.cover),title=esc(s.title||''),imdb=s.imdbRatingValue||s.imdbRate||'',year=s.releaseDate?String(s.releaseDate).substring(0,4):'',isS=s.subjectType===2,id=s.subjectId;return '<div class="movie-card" onclick="cc(\''+id+'\')"><img src="'+img+'" alt="'+title+'" loading="lazy" onerror="this.src=\''+PH+'\'"><div class="movie-card-info"><h3 title="'+title+'">'+title+'</h3><div class="card-meta">'+(imdb?'<span class="imdb"><i class="fas fa-star"></i> '+imdb+'</span>':'')+(year?'<span>'+year+'</span>':'')+'<span class="badge'+(isS?' s':'')+'">'+(isS?'Series':'Movie')+'</span></div></div></div>'}
-function rg(subs){if(!subs||subs.length===0)return '<div class="empty-state"><i class="fas fa-film"></i><p>Tidak ada data.</p></div>';return '<div class="movie-grid">'+subs.map(rc).join('')+'</div>'}
-function rs(icon,title,subs,page){if(!subs||subs.length===0)return '';return '<section class="container" style="margin-bottom:40px"><div class="section-header"><h2>'+icon+' '+title+'</h2><button class="view-all" onclick="go(\''+page+'\')">Lihat Semua <i class="fas fa-arrow-right"></i></button></div>'+rg(subs)+'</section>'}
-function rp(){var p=curP.page;return '<div class="pagination"><button '+(p<=1?'disabled':'')+' onclick="cp('+(p-1)+')"><i class="fas fa-chevron-left"></i> Sebelumnya</button><span>Halaman '+p+'</span><button onclick="cp('+(p+1)+')">Selanjutnya <i class="fas fa-chevron-right"></i></button></div>'}
+function ld(sid){api(A+'/moviebox/detail?subjectId='+sid).then(function(d){hl();if(!d||!d.data){$('pc').innerHTML='<div class="container es" style="padding-top:50px"><i class="fas fa-exclamation-triangle" style="color:var(--primary)"></i><p>Detail tidak ditemukan.</p></div>';return}
+var dd=d.data,is=dd.subjectType===2,gn=dd.genre?dd.genre.split(',').map(function(g){return g.trim()}):[],ca=dd.staffList?dd.staffList.filter(function(s){return s.staffType===1}):[],im=iu(dd.cover),ib=dd.imdbRatingValue||dd.imdbRate||''
+var html='<div class="container" style="padding-top:30px"><div class="dh"><div class="db" style="background-image:url(\''+im+'\')"></div><div class="dbo"></div><div class="dc"><div class="dp"><img src="'+im+'" alt="'+e(dd.title)+'" onerror="this.src=\''+PH+'\'"></div><div class="di"><h1>'+e(dd.title)+'</h1><div class="dm">'+(dd.releaseDate?'<span><i class="fas fa-calendar"></i> '+fd(dd.releaseDate)+'</span>':'')+(dd.duration?'<span><i class="fas fa-clock"></i> '+dd.duration+'</span>':'')+(ib?'<span class="ir"><i class="fas fa-star"></i> IMDb '+ib+'</span>':'')+(dd.countryName?'<span><i class="fas fa-map-pin"></i> '+e(dd.countryName)+'</span>':'')+(dd.language?'<span><i class="fas fa-language"></i> '+e(dd.language)+'</span>':'')+'<span><i class="fas '+(is?'fa-list':'fa-film')+'"></i> '+(is?'Series':'Movie')+'</span>'+(dd.viewers?'<span><i class="fas fa-eye"></i> '+Number(dd.viewers).toLocaleString()+' viewers</span>':'')+'</div><div class="dg">'+gn.map(function(g){return '<span>'+e(g)+'</span>'}).join('')+'</div><p class="desc">'+(dd.description||'Tidak ada deskripsi.')+'</p><div class="da"><button class="btn" onclick="pm(\''+sid+'\')"><i class="fas fa-play"></i> Putar Video</button><button class="btn2" onclick="dm(\''+sid+'\')"><i class="fas fa-download"></i> Download</button></div>'
+if(ca.length>0){html+='<div class="detail-cast"><h3 style="font-size:1rem;margin-bottom:12px"><i class="fas fa-users"></i> Pemain</h3><div class="cg">';ca.slice(0,10).forEach(function(c){var av=c.avatarUrl||'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"><rect fill="#1a1a2e" width="50" height="50"/><text x="25" y="30" text-anchor="middle" fill="#666" font-size="20">'+c.name.charAt(0)+'</text></svg>');html+='<div class="ci"><img src="'+av+'" alt="'+e(c.name)+'"><div class="cn">'+e(c.name)+'</div><div class="cr">'+e(c.character)+'</div></div>'});html+='</div></div>'}
+html+='</div></div></div></div><div class="container se">'
+if(is){html+='<h3 style="font-size:1.1rem;margin-bottom:15px"><i class="fas fa-list-ol"></i> Episode</h3><div class="el">';api(A+'/moviebox/download-series?subjectId='+sid+'&season=1&resolution=360').then(function(dl){if(dl&&dl.data&&dl.data.episodes){dl.data.episodes.forEach(function(ep){html+='<div class="ec"><div><h4>Episode '+ep.ep+'</h4><p>'+(ep.title||'Season '+ep.se)+' &bull; '+fs(ep.size)+'</p></div><div class="ea"><button class="ep" onclick="op(\''+ep.resourceLink+'\',\''+e(dd.title)+' Ep.'+ep.ep+'\')"><i class="fas fa-play"></i></button><a href="'+ep.resourceLink+'" target="_blank" class="ed" download><i class="fas fa-download"></i></a></div></div>'})}else{html+='<p style="color:#6c6c80;grid-column:1/-1">Episode tidak tersedia.</p>'}html+='</div></div>';$('pc').innerHTML=html});return}else{html+='<h3 style="font-size:1.1rem;margin-bottom:15px"><i class="fas fa-download"></i> Download & Resolusi</h3><div class="rt" id="rt"><button class="on" onclick="sr(\''+sid+'\',360,this)">360P</button><button onclick="sr(\''+sid+'\',480,this)">480P</button><button onclick="sr(\''+sid+'\',720,this)">720P</button><button onclick="sr(\''+sid+'\',1080,this)">1080P</button></div><div id="di"><div class="el">';api(A+'/moviebox/download-movie?subjectId='+sid+'&resolution=360').then(function(dl){if(dl&&dl.data&&dl.data.files){dl.data.files.forEach(function(f){html+='<div class="ec"><div><h4>'+f.resolution+'P</h4><p>'+(f.codecName||'H.264').toUpperCase()+' &bull; '+fs(f.size)+'</p></div><div class="ea"><button class="ep" onclick="op(\''+f.resourceLink+'\',\''+e(dd.title)+' '+f.resolution+'P\')"><i class="fas fa-play"></i></button><a href="'+f.resourceLink+'" target="_blank" class="ed" download><i class="fas fa-download"></i></a></div></div>'});if(dl.data.subtitle)html+='<div style="margin-top:10px;padding:12px;background:#1a1a2e;border-radius:6px"><p style="color:#6c6c80;font-size:.8rem"><i class="fas fa-closed-captioning"></i> Subtitle: '+dl.data.subtitle.lanName+' <a href="'+dl.data.subtitle.url+'" target="_blank" style="color:#e50914;margin-left:8px">Download SRT</a></p></div>'}else{html+='<p style="color:#6c6c80;grid-column:1/-1">Tidak tersedia.</p>'}html+='</div></div></div>';$('pc').innerHTML=html});return}}})}
+function sr(sid,res,btn){qa('.rt button').forEach(function(t){t.classList.remove('on')});btn.classList.add('on');var di=$('di');if(!di)return;di.innerHTML='<div style="display:flex;justify-content:center;padding:30px"><div class="ldr"></div></div>';api(A+'/moviebox/download-movie?subjectId='+sid+'&resolution='+res).then(function(dl){if(dl&&dl.data&&dl.data.files){var h='<div class="el">';dl.data.files.forEach(function(f){h+='<div class="ec"><div><h4>'+f.resolution+'P</h4><p>'+(f.codecName||'H.264').toUpperCase()+' &bull; '+fs(f.size)+'</p></div><div class="ea"><button class="ep" onclick="op(\''+f.resourceLink+'\',\''+e(dl.data.title)+' '+f.resolution+'P\')"><i class="fas fa-play"></i></button><a href="'+f.resourceLink+'" target="_blank" class="ed" download><i class="fas fa-download"></i></a></div></div>'});h+='</div>';if(dl.data.subtitle)h+='<div style="margin-top:10px;padding:12px;background:#1a1a2e;border-radius:6px"><p style="color:#6c6c80;font-size:.8rem"><i class="fas fa-closed-captioning"></i> Sub: '+dl.data.subtitle.lanName+' <a href="'+dl.data.subtitle.url+'" target="_blank" style="color:#e50914;margin-left:8px">Download SRT</a></p></div>';di.innerHTML=h}else{di.innerHTML='<p style="color:#6c6c80;text-align:center;padding:20px">Tidak tersedia.</p>'}})}
 
-function srt2vtt(t){return 'WEBVTT\n\n'+t.replace(/(\d{2}:\d{2}:\d{2}),(\d{3})/g,'$1.$2')}
-async function getSub(url){if(!url)return null;try{var r=await fetch(url);if(!r.ok)return null;var t=await r.text();if(t.trim().startsWith('WEBVTT'))return URL.createObjectURL(new Blob([t],{type:'text/vtt'}));return URL.createObjectURL(new Blob([srt2vtt(t)],{type:'text/vtt'}))}catch(e){return null}}
+function op(url,title){$('mt').textContent=title||'';var pl=$('pl');if(pl){pl.style.display='flex';pl.innerHTML='<div class="ldr"></div><span>Memuat video...</span>'};var p=$('vp');if(p){p.pause();p.removeAttribute('src');p.src=url;p.load()};$('dlBtn').href=url;document.body.style.overflow='hidden';$('vm').classList.add('on');if(p){p.oncanplay=function(){if(pl)pl.style.display='none'};p.onplaying=function(){if(pl)pl.style.display='none'};p.onerror=function(){if(pl)pl.innerHTML='<span style="color:#e50914">Gagal.</span>'}}}
+function cm(e){if(e&&e.target!==$('vm'))return;$('vm').classList.remove('on');document.body.style.overflow='';var p=$('vp');if(p){p.pause();p.removeAttribute('src');p.load();p.oncanplay=null;p.onplaying=null;p.onerror=null};var pl=$('pl');if(pl){pl.style.display='flex';pl.innerHTML='<div class="ldr"></div><span>Memuat video...</span>'}}
+function pm(sid){api(A+'/moviebox/download-movie?subjectId='+sid+'&resolution=360').then(function(dl){if(!dl||!dl.data||!dl.data.files||dl.data.files.length===0){tm('Tidak ada sumber video.');return}op(dl.data.files[0].resourceLink,dl.data.title||'Movie')})}
+function dm(sid){api(A+'/moviebox/download-movie?subjectId='+sid+'&resolution=720').then(function(dl){if(dl&&dl.data&&dl.data.files&&dl.data.files.length>0){var best=dl.data.files.reduce(function(a,b){return a.resolution>b.resolution?a:b});window.open(best.resourceLink,'_blank');tm('Download '+(dl.data.title||'')+' '+best.resolution+'P')}else{tm('Link download tidak tersedia.')}})}
+function ts(){var sb=$('sb');sb.classList.toggle('on');if(sb.classList.contains('on'))$('si').focus()}
+function sc(q){var q=q||($('si')?$('si').value.trim():'');if(!q)return;$('sb').classList.remove('on');sl();api(A+'/moviebox/search?keyword='+encodeURIComponent(q)+'&page=1&perPage='+P).then(function(d){hl();var html='<div class="container" style="padding-top:30px"><div class="si"><h2><i class="fas fa-search"></i> "'+e(q)+'"</h2></div>';var items=[];if(d&&d.data&&d.data.results){d.data.results.forEach(function(item){if(item.topicType==='SUBJECT'&&item.subjects)item.subjects.forEach(function(s){items.push(s)})})}html+=items.length>0?rg(items):'<div class="es"><i class="fas fa-search-minus"></i><p>Tidak ada hasil.</p></div>';html+='</div>';$('pc').innerHTML=html})}
+function tm(){$('nm').classList.toggle('on')}
 
-function lHome(){
-Promise.all([api(API+'/moviebox/homepage'),api(API+'/moviebox/global?page=1&perPage='+PP),api(API+'/moviebox/indonesia?page=1&perPage=10'),api(API+'/moviebox/hollywood?page=1&perPage=10'),api(API+'/moviebox/series/kdrama?page=1&perPage=10')]).then(function(r){var home=r[0],global=r[1],indo=r[2],hol=r[3],kd=r[4];hdL();var html='';
-if(home&&home.data&&home.data.items){var b=[];home.data.items.forEach(function(item){if(item.banner&&item.banner.banners)item.banner.banners.forEach(function(x){if(x.subject)b.push(x)})});if(b.length>0){html+='<section class="hero-section"><div class="hero-carousel">';b.slice(0,6).forEach(function(x,i){var sub=x.subject,g=sub.genre?sub.genre.split(',').map(function(x){return x.trim()}).slice(0,3):[],bg=iurl(sub.cover),imdb=sub.imdbRatingValue||sub.imdbRate||'',id=sub.subjectId;html+='<div class="hero-slide'+(i===0?' active':'')+'"><div class="hero-slide-bg" style="background-image:url(\''+bg+'\')"></div><div class="hero-slide-content"><h2>'+esc(sub.title)+'</h2><div class="hero-meta">'+(sub.releaseDate?'<span><i class="fas fa-calendar"></i> '+sub.releaseDate+'</span>':'')+(imdb?'<span><i class="fas fa-star" style="color:var(--accent)"></i> '+imdb+'</span>':'')+'</div><div class="hero-actions"><button class="btn-pri" onclick="go(\'detail\',{sid:\''+id+'\'})"><i class="fas fa-info-circle"></i> Detail</button><button class="btn-sec" onclick="pm(\''+id+'\')"><i class="fas fa-play"></i> Tonton</button></div></div></div>'});html+='<div class="hero-dots">';b.slice(0,6).forEach(function(_,i){html+='<button class="hero-dot'+(i===0?' active':'')+'" onclick="goh('+i+')"></button>'});html+='</div></div></section>'}}
-html+='<section class="container"><div class="cat-grid">';var cats=[{n:'Global',i:'fa-globe',p:'global',c:'#4361ee'},{n:'Indonesia',i:'fa-flag',p:'indo',c:'#e50914'},{n:'Hollywood',i:'fa-film',p:'hollywood',c:'#f5c518'},{n:'Asia',i:'fa-earth-asia',p:'asia',c:'#06d6a0'},{n:'Horror',i:'fa-ghost',p:'horror',c:'#7209b7'},{n:'Animasi',i:'fa-dragon',p:'anim',c:'#fb5607'},{n:'K-Drama',i:'fa-tv',p:'ser-kdrama',c:'#e63946'},{n:'Anime',i:'fa-crown',p:'ser-anime',c:'#f72585'},{n:'C-Drama',i:'fa-bolt',p:'ser-cdrama',c:'#4cc9f0'},{n:'Barat',i:'fa-globe-americas',p:'ser-barat',c:'#2ec4b6'}];cats.forEach(function(c){html+='<a onclick="go(\''+c.p+'\')" class="cat-item" style="--c:'+c.c+'"><i class="fas '+c.i+'"></i><span>'+c.n+'</span></a>'});html+='</div></section>'
-var secs=[{icon:'🌍',title:'Global',data:global,page:'global'},{icon:'🇮🇩',title:'Indonesia',data:indo,page:'indo'},{icon:'🇺🇸',title:'Hollywood',data:hol,page:'hollywood'},{icon:'📺',title:'K-Drama',data:kd,page:'ser-kdrama'}];secs.forEach(function(s){var subs=s.data&&s.data.data&&s.data.data.subjects?s.data.data.subjects.slice(0,10):null;if(subs)html+=rs(s.icon,s.title,subs,s.page)})
-$('pc').innerHTML=html||'<div class="container empty-state"><i class="fas fa-frown"></i><p>Tidak ada data.</p></div>';startHero()})}
-
-function goh(i){curSlide=i;qa('.hero-slide').forEach(function(s,idx){s.classList.toggle('active',idx===i)});qa('.hero-dot').forEach(function(d,idx){d.classList.toggle('active',idx===i)})}
-function startHero(){var s=qa('.hero-slide');if(s.length<2)return;if(heroInt)clearInterval(heroInt);heroInt=setInterval(function(){goh((curSlide+1)%s.length)},5000)}
-
-function lList(type){api(API+'/moviebox/'+type+'?page='+curP.page+'&perPage='+PP).then(function(data){hdL();var titles={global:'Global',indonesia:'Indonesia',hollywood:'Hollywood',asia:'Asia',horror:'Horror',animasi:'Animasi'};var subs=data&&data.data&&data.data.subjects?data.data.subjects:[];$('pc').innerHTML='<div class="container" style="padding-top:30px"><div class="section-header"><h2>'+(titles[type]||type)+'</h2></div>'+(subs.length>0?rg(subs)+rp():'<div class="empty-state"><i class="fas fa-film"></i><p>Tidak ada data.</p></div>')+'</div>'})}
-function lSer(type){api(API+'/moviebox/series/'+type+'?page='+curP.page+'&perPage='+PP).then(function(data){hdL();var titles={kdrama:'K-Drama',indo:'Indo Drama',anime:'Anime',barat:'Series Barat'};var subs=data&&data.data&&data.data.subjects?data.data.subjects:[];$('pc').innerHTML='<div class="container" style="padding-top:30px"><div class="section-header"><h2>'+(titles[type]||'Series')+'</h2></div>'+(subs.length>0?rg(subs)+rp():'<div class="empty-state"><i class="fas fa-tv"></i><p>Tidak ada data.</p></div>')+'</div>'})}
-
-function lDet(sid){api(API+'/moviebox/detail?subjectId='+sid).then(function(data){hdL();if(!data||!data.data){$('pc').innerHTML='<div class="container empty-state" style="padding-top:50px"><i class="fas fa-exclamation-triangle" style="color:var(--primary)"></i><p>Detail tidak ditemukan.</p></div>';return}
-var d=data.data,isS=d.subjectType===2,genres=d.genre?d.genre.split(',').map(function(g){return g.trim()}):[],cast=d.staffList?d.staffList.filter(function(s){return s.staffType===1}):[],img=iurl(d.cover),imdb=d.imdbRatingValue||d.imdbRate||''
-var html='<div class="container" style="padding-top:30px"><div class="detail-header"><div class="detail-bg" style="background-image:url(\''+img+'\')"></div><div class="detail-bgo"></div><div class="detail-content"><div class="detail-poster"><img src="'+img+'" alt="'+esc(d.title)+'" onerror="this.src=\''+PH+'\'"></div><div class="detail-info"><h1>'+esc(d.title)+'</h1><div class="detail-meta">'+(d.releaseDate?'<span><i class="fas fa-calendar"></i> '+fd(d.releaseDate)+'</span>':'')+(d.duration?'<span><i class="fas fa-clock"></i> '+d.duration+'</span>':'')+(imdb?'<span class="imdb-rating"><i class="fas fa-star"></i> IMDb '+imdb+'</span>':'')+(d.countryName?'<span><i class="fas fa-map-pin"></i> '+esc(d.countryName)+'</span>':'')+(d.language?'<span><i class="fas fa-language"></i> '+esc(d.language)+'</span>':'')+'<span><i class="fas '+(isS?'fa-list':'fa-film')+'"></i> '+(isS?'Series':'Movie')+'</span>'+(d.viewers?'<span><i class="fas fa-eye"></i> '+Number(d.viewers).toLocaleString()+' viewers</span>':'')+'</div><div class="detail-genre">'+genres.map(function(g){return '<span>'+esc(g)+'</span>'}).join('')+'</div><p class="detail-desc">'+(d.description||'Tidak ada deskripsi.')+'</p><div class="detail-actions"><button class="btn-pri" onclick="pm(\''+sid+'\')"><i class="fas fa-play"></i> Putar Video</button><button class="btn-sec" onclick="dm(\''+sid+'\')"><i class="fas fa-download"></i> Download</button></div>'
-if(cast.length>0){html+='<div class="detail-cast"><h3 style="font-size:1rem;margin-bottom:12px"><i class="fas fa-users"></i> Pemain</h3><div class="cast-grid">';cast.slice(0,10).forEach(function(c){var av=c.avatarUrl||'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"><rect fill="#1a1a2e" width="50" height="50"/><text x="25" y="30" text-anchor="middle" fill="#666" font-size="20">'+c.name.charAt(0)+'</text></svg>');html+='<div class="cast-item"><img src="'+av+'" alt="'+esc(c.name)+'"><div class="cast-name">'+esc(c.name)+'</div><div class="cast-role">'+esc(c.character)+'</div></div>'});html+='</div></div>'}
-html+='</div></div></div></div><div class="container section-episodes">'
-if(isS){html+='<h3 style="font-size:1.1rem;margin-bottom:15px"><i class="fas fa-list-ol"></i> Episode</h3><div class="ep-list">';api(API+'/moviebox/download-series?subjectId='+sid+'&season=1&resolution=360').then(function(dl){if(dl&&dl.data&&dl.data.episodes){dl.data.episodes.forEach(function(ep){var su=ep.subtitle&&ep.subtitle.url?ep.subtitle.url:'';html+='<div class="ep-card"><div><h4>Episode '+ep.ep+'</h4><p>'+(ep.title||'Season '+ep.se)+' &bull; '+fs(ep.size)+'</p></div><div class="ep-actions"><button class="ep-play" onclick="pe(\''+ep.resourceLink+'\',\''+esc(d.title)+' Ep.'+ep.ep+'\',\''+su+'\')"><i class="fas fa-play"></i></button><a href="'+ep.resourceLink+'" target="_blank" class="ep-dl" download><i class="fas fa-download"></i></a></div></div>'})}else{html+='<p style="color:#6c6c80;grid-column:1/-1">Episode tidak tersedia.</p>'}html+='</div></div>';$('pc').innerHTML=html});return}else{html+='<h3 style="font-size:1.1rem;margin-bottom:15px"><i class="fas fa-download"></i> Download & Resolusi</h3><div class="res-tabs" id="rt"><button class="res-tab active" onclick="sr(\''+sid+'\',360,this)">360P</button><button class="res-tab" onclick="sr(\''+sid+'\',480,this)">480P</button><button class="res-tab" onclick="sr(\''+sid+'\',720,this)">720P</button><button class="res-tab" onclick="sr(\''+sid+'\',1080,this)">1080P</button></div><div id="di"><div class="ep-list">';api(API+'/moviebox/download-movie?subjectId='+sid+'&resolution=360').then(function(dl){if(dl&&dl.data&&dl.data.files){dl.data.files.forEach(function(f){html+='<div class="ep-card"><div><h4>'+f.resolution+'P</h4><p>'+(f.codecName||'H.264').toUpperCase()+' &bull; '+fs(f.size)+'</p></div><div class="ep-actions"><button class="ep-play" onclick="op(\''+f.resourceLink+'\',\''+esc(d.title)+' '+f.resolution+'P\',null)"><i class="fas fa-play"></i></button><a href="'+f.resourceLink+'" target="_blank" class="ep-dl" download><i class="fas fa-download"></i></a></div></div>'});if(dl.data.subtitle)html+='<div style="margin-top:10px;padding:12px;background:#1a1a2e;border-radius:6px"><p style="color:#6c6c80;font-size:.8rem"><i class="fas fa-closed-captioning"></i> Sub: '+dl.data.subtitle.lanName+'</p></div>'}else{html+='<p style="color:#6c6c80;grid-column:1/-1">Tidak tersedia.</p>'}html+='</div></div></div>';$('pc').innerHTML=html});return}})})
-
-function sr(sid,res,btn){qa('.res-tab').forEach(function(t){t.classList.remove('active')});btn.classList.add('active');var di=$('di');if(!di)return;di.innerHTML='<div style="display:flex;justify-content:center;padding:30px"><div class="loader"></div></div>';api(API+'/moviebox/download-movie?subjectId='+sid+'&resolution='+res).then(function(dl){if(dl&&dl.data&&dl.data.files){var h='<div class="ep-list">';dl.data.files.forEach(function(f){h+='<div class="ep-card"><div><h4>'+f.resolution+'P</h4><p>'+(f.codecName||'H.264').toUpperCase()+' &bull; '+fs(f.size)+'</p></div><div class="ep-actions"><button class="ep-play" onclick="op(\''+f.resourceLink+'\',\''+esc(dl.data.title)+' '+f.resolution+'P\',null)"><i class="fas fa-play"></i></button><a href="'+f.resourceLink+'" target="_blank" class="ep-dl" download><i class="fas fa-download"></i></a></div></div>'});h+='</div>';if(dl.data.subtitle)h+='<div style="margin-top:10px;padding:12px;background:#1a1a2e;border-radius:6px"><p style="color:#6c6c80;font-size:.8rem"><i class="fas fa-closed-captioning"></i> Sub: '+dl.data.subtitle.lanName+'</p></div>';di.innerHTML=h}else{di.innerHTML='<p style="color:#6c6c80;text-align:center;padding:20px">Tidak tersedia.</p>'}})}
-
-// === PLAYER ===
-function op(url,title,subUrl){
-$('mt').textContent=title||''
-var pl=$('pl');if(pl){pl.style.display='flex';pl.innerHTML='<div class="loader"></div><span>Memuat video...</span>'}
-var p=$('vp')
-if(p){p.pause();p.removeAttribute('src');var old=p.querySelectorAll('track');old.forEach(function(t){t.remove()});p.src=url;if(subUrl){var tr=document.createElement('track');tr.kind='subtitles';tr.label='Indonesian';tr.srclang='id';tr.src=subUrl;tr.default=true;p.appendChild(tr)}p.load()}
-var sb=$('subBtn');if(sb){if(subUrl){sb.style.display='flex';sb.classList.remove('active');sb.innerHTML='<i class="fas fa-closed-captioning"></i>'}else{sb.style.display='none'}}
-$('dlBtn').href=url;document.body.style.overflow='hidden';$('vm').classList.add('active')
-if(p){p.oncanplay=function(){if(pl)pl.style.display='none';try{if(p.textTracks&&p.textTracks.length>0){p.textTracks[0].mode='showing';var sb=$('subBtn');if(sb){sb.classList.add('active');sb.innerHTML='<i class="fas fa-closed-captioning"></i> <b>IND</b>'}}}catch(e){}};p.onplaying=function(){if(pl)pl.style.display='none'};p.onerror=function(){if(pl)pl.innerHTML='<span style="color:#e50914">Gagal. <a href="'+url+'" target="_blank" style="color:#fff">Download langsung</a></span>'}}}
-
-function togSub(){var p=$('vp');if(!p||!p.textTracks||p.textTracks.length===0)return;var tr=p.textTracks[0],sb=$('subBtn');if(tr.mode==='showing'){tr.mode='hidden';if(sb){sb.classList.remove('active');sb.innerHTML='<i class="fas fa-closed-captioning"></i>'}}else{tr.mode='showing';if(sb){sb.classList.add('active');sb.innerHTML='<i class="fas fa-closed-captioning"></i> <b>IND</b>'}}}
-function cm(e){if(e&&e.target!==$('vm'))return;$('vm').classList.remove('active');document.body.style.overflow='';var p=$('vp');if(p){p.pause();p.removeAttribute('src');p.load();p.oncanplay=null;p.onplaying=null;p.onerror=null}var pl=$('pl');if(pl){pl.style.display='flex';pl.innerHTML='<div class="loader"></div><span>Memuat video...</span>'}}
-function pe(url,title,subUrl){getSub(subUrl).then(function(vtt){op(url,title,vtt)})}
-function pm(sid){api(API+'/moviebox/download-movie?subjectId='+sid+'&resolution=360').then(async function(dl){if(!dl||!dl.data||!dl.data.files||dl.data.files.length===0){toast('Tidak ada sumber video.');return}var url=dl.data.files[0].resourceLink,title=dl.data.title||'Movie',subUrl=dl.data.subtitle&&dl.data.subtitle.url?dl.data.subtitle.url:null,vtt=subUrl?await getSub(subUrl):null;op(url,title,vtt)})}
-function dm(sid){api(API+'/moviebox/download-movie?subjectId='+sid+'&resolution=720').then(function(dl){if(dl&&dl.data&&dl.data.files&&dl.data.files.length>0){var best=dl.data.files.reduce(function(a,b){return a.resolution>b.resolution?a:b});window.open(best.resourceLink,'_blank');toast('Download '+(dl.data.title||'')+' '+best.resolution+'P')}else{toast('Link download tidak tersedia.')}})}
-
-function ts(){var sb=$('sb');sb.classList.toggle('active');if(sb.classList.contains('active'))$('si').focus()}
-function sc(q){var q=q||($('si')?$('si').value.trim():'');if(!q)return;$('sb').classList.remove('active');shL();api(API+'/moviebox/search?keyword='+encodeURIComponent(q)+'&page=1&perPage='+PP).then(function(data){hdL();var html='<div class="container" style="padding-top:30px"><div class="search-info"><h2><i class="fas fa-search"></i> Pencarian: "'+esc(q)+'"</h2></div>';var items=[];if(data&&data.data&&data.data.results){data.data.results.forEach(function(item){if(item.topicType==='SUBJECT'&&item.subjects)item.subjects.forEach(function(s){items.push(s)})})}html+=items.length>0?rg(items):'<div class="empty-state"><i class="fas fa-search-minus"></i><p>Tidak ada hasil.</p></div>';html+='</div>';$('pc').innerHTML=html})}
-function tm(){$('nm').classList.toggle('active')}
-
-document.addEventListener('DOMContentLoaded',function(){go('home');window.addEventListener('resize',function(){if(window.innerWidth>768)$('nm').classList.remove('active')});document.addEventListener('keydown',function(e){if(e.key==='Escape')cm()})})
+document.addEventListener('DOMContentLoaded',function(){nav('home');window.addEventListener('resize',function(){if(window.innerWidth>768)$('nm').classList.remove('on')});document.addEventListener('keydown',function(e){if(e.key==='Escape')cm()})})
 </script>
 </body>
 </html>
